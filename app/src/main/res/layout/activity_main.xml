@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="@string/reg_form"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstNameL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:startIconDrawable="@drawable/ic_person"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name *"
+                android:inputType="textPersonName"
+                android:maxLength="30" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastNameL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/ic_person"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:counterMaxLength="30"
+            android:layout_marginTop="15dp"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:layout_constraintTop_toBottomOf="@id/firstNameL"
+            app:layout_constraintLeft_toLeftOf="@id/firstNameL"
+            app:layout_constraintRight_toRightOf="@id/firstNameL"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lastName"
+                android:layout_width="match_parent"
+                android:maxLength="30"
+                android:inputType="textPersonName"
+                android:layout_height="wrap_content"
+                android:hint="Last Name *" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userNumberL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:startIconDrawable="@drawable/ic_phone"
+            app:counterMaxLength="10"
+            android:layout_marginTop="15dp"
+            app:prefixText="+91"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:layout_constraintTop_toBottomOf="@id/lastNameL"
+            app:layout_constraintLeft_toLeftOf="@id/lastNameL"
+            app:layout_constraintRight_toRightOf="@id/lastNameL"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userNumber"
+                android:layout_width="match_parent"
+                android:maxLength="10"
+                android:inputType="phone"
+                android:layout_height="wrap_content"
+                android:hint="Mobile No. *" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userEmailL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/ic_email"
+            app:counterEnabled="true"
+            app:counterMaxLength="40"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            android:layout_marginTop="15dp"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:layout_constraintTop_toBottomOf="@id/userNumberL"
+            app:layout_constraintLeft_toLeftOf="@id/userNumberL"
+            app:layout_constraintRight_toRightOf="@id/userNumberL"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:maxLength="40"
+                android:inputType="textEmailAddress"
+                android:layout_height="wrap_content"
+                android:hint="Email Address *"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender*  :"
+            app:layout_constraintLeft_toLeftOf="@id/passwordL"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/radioGroup"
+            app:layout_constraintTop_toTopOf="@id/radioGroup"
+             />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="46dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toEndOf="@+id/gender"
+            app:layout_constraintTop_toBottomOf="@id/passwordL"
+            app:layout_constraintRight_toRightOf="@id/passwordL"
+            >
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Male" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Female" />
+        </RadioGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ageL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:boxStrokeColor="@color/black"
+            app:counterEnabled="true"
+            app:counterMaxLength="2"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/userEmailL"
+
+            app:layout_constraintStart_toStartOf="@+id/userEmailL"
+            app:layout_constraintTop_toBottomOf="@+id/userEmailL"
+            app:startIconDrawable="@drawable/ic_age">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Age *"
+                android:inputType="number"
+                android:maxLength="2" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="16"
+            app:startIconDrawable="@drawable/ic_lock"
+            app:boxStrokeColor="@color/black"
+            app:hintTextColor="@color/black"
+            app:helperTextTextColor="@android:color/holo_red_light"
+            app:layout_constraintLeft_toLeftOf="@id/ageL"
+            app:layout_constraintRight_toRightOf="@id/ageL"
+            app:layout_constraintTop_toBottomOf="@id/ageL"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Password *"
+                android:maxLength="16" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="25dp"
+            android:text="Add User"
+            android:background="#32CD32"
+            android:textColor="@color/white"
+            android:elevation="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+        <Button
+            android:id="@+id/showUserBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="60dp"
+            android:textColor="@color/white"
+            android:text="Show Users"
+            android:elevation="5dp"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="#F9A825"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/addBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
